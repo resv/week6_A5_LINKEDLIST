@@ -13,14 +13,14 @@ public class Assignment5_Q1to15 {
 		("Blue", "Yellow","Red", "Green", "Orange", "White", "Black")));
 
 		// CALLING ALL METHODS, ONE AFTER ANOTHER
-		appendLL(colors);
+		append(colors, "Green");
 		iterate(colors);
 //		iterateAt(colors);
 		iterateReverse(colors);
 		insertAt(colors, 5, "Brown");
 		insertFirstLast(colors,"Brown", "Gray");
 		insertFirst(colors, "Brown");
-		insertLast(colors);
+		insertLast(colors, "Brown");
 		insertFewAt(colors);
 		getFirstLast(colors);
 		removeFirstLast(colors);
@@ -32,12 +32,22 @@ public class Assignment5_Q1to15 {
 	}
 
 	// 1. Write a Java program to append the specified element to the end of a linked list.
-	private static void appendLL(LinkedList<String> list) {
+	private static void append(LinkedList<String> list, String newColor) {
 		System.out.println("\nQUESTION 1 -----------------------");
 		
-		list.addFirst("Green");
+		//DISPLAY CURRENT ORDER OF LINKEDLIST
+		System.out.println("Currently the LinkedList order is : ");
+		System.out.println(list + " \r\n");
+		
+		//METHOD TO APPEND ELEMENT TO THE END OF LinkedList
+		list.add(newColor);
+		
+		//PRINT NEW CHANGES
+		System.out.println("New appended array :");
 		System.out.println(list);
-		System.out.println("(Appended \"Green\" at the end of the LinkedList)");
+		
+		//USER NOTIFICATION
+		System.out.println("(Appended [" + newColor +"] at the end of the LinkedList)");
 		
 		// IMPLEMENTED TO RESET ARRAY FOR NEXT METHOD TO TEST
 		list.clear();
@@ -68,14 +78,21 @@ public class Assignment5_Q1to15 {
 	private static void iterateReverse(LinkedList<String> list) {
 		System.out.println("\nQUESTION 4 -----------------------");
 		
-		//PRINT OUT ORIGINAL LINKEDLIST ORDER
-		System.out.println("Current order :" + list);
+		//DISPLAY CURRENT ORDER OF LINKEDLIST
+		System.out.println("Currently the LinkedList order is : ");
+		System.out.println(list + " \r\n");
 		
 		//FOR LOOP TO PUSH ELEMENT TO THE LAST INDEX AND TO POP THE FIRST ELEMENT
 		for (int i = 0, k = list.size() - 1; i < k; i++) {
 			list.add(i, list.remove(k));
 		}
-		System.out.println("New reversed order : " + list);
+		
+		//PRINT NEW CHANGES
+		System.out.println("New reversed order : ");
+		System.out.println(list);
+		
+		//USER NOTIFICATION
+		System.out.println("(Reversed the original LinkedList)");
 		
 		// IMPLEMENTED TO RESET ARRAY FOR NEXT METHOD TO TEST
 		list.clear();
@@ -90,11 +107,15 @@ public class Assignment5_Q1to15 {
 		System.out.println("Currently the LinkedList order is : ");
 		System.out.println(list + " ");
 		
-		list.add(index, element);	//METHOD USED TO INSERT AT SPECIFIC INDEX
+		//METHOD USED TO INSERT AT SPECIFIC INDEX
+		list.add(index, element);	
 		
-		System.out.println("\r\nWe inserted " + element + " at the " + index + " index : ");
+		//PRINT NEW CHANGES
+		System.out.println("\r\nNew LinkedList order is : ");
 		System.out.println(list);
-		System.out.println("(Inserting an element " + "[" + element + "] at index "+ index +")");
+		
+		//USER NOTIFICATION
+		System.out.println("(Inserted element " + "[" + element + "] at index "+ index +")");
 		
 		// IMPLEMENTED TO RESET ARRAY FOR NEXT METHOD TO TEST
 		list.clear();
@@ -109,17 +130,21 @@ public class Assignment5_Q1to15 {
 		//DISPLAY CURRENT ORDER OF LINKEDLIST
 		System.out.println("Currently the LinkedList order is : ");
 		System.out.println(list + " \r\n");
-		list.addFirst(elementFirst);	//METHOD USED TO INSERT AT SPECIFIC INDEX
+		
+		//METHOD USED TO INSERT TO FIRST & LAST INDEX
+		list.addFirst(elementFirst);
 		list.addLast(elementLast);
+		
+		//PRINT NEW CHANGES
 		System.out.println("New appended array :");
-
 		System.out.println(list);
+		
+		//USER NOTIFICATION
 		System.out.println("(Inserted [" + elementFirst +  "] to the front & [" + elementLast + "] to the end)");
 		
 		// IMPLEMENTED TO RESET ARRAY FOR NEXT METHOD TO TEST
 		list.clear();
 		list.addAll(Arrays.asList("Blue", "Yellow","Red", "Green", "Orange", "White", "Black"));
-		
 	}
 	
 	
@@ -131,11 +156,14 @@ public class Assignment5_Q1to15 {
 		System.out.println("Currently the LinkedList order is : ");
 		System.out.println(list + " \r\n");
 		
+		//METHOD USED TO INSERT AT TO THE FIRST INDEX
+		list.addFirst(element);
 		
-		list.addFirst(element);	//METHOD USED TO INSERT AT SPECIFIC INDEX
+		//PRINT NEW CHANGES
 		System.out.println("New appended array :");
-
 		System.out.println(list); //PRINTING OUT LIST
+		
+		//USER NOTIFICATION
 		System.out.println("(Inserted [" + element +  "] to the front)");
 		
 		// IMPLEMENTED TO RESET ARRAY FOR NEXT METHOD TO TEST
@@ -145,10 +173,29 @@ public class Assignment5_Q1to15 {
 	
 
 	// 8. Write a Java program to insert the specified element at the end of a linked list.
-	private static void insertLast(LinkedList<String> list) {
+	private static void insertLast(LinkedList<String> list, String element) {
 		System.out.println("\nQUESTION 8 -----------------------");
 		
-	}
+		//DISPLAY CURRENT ORDER OF LINKEDLIST
+		System.out.println("Currently the LinkedList order is : ");
+		System.out.println(list + " \r\n");
+			
+		//METHOD USED TO INSERT AT END OF ENDEX INDEX
+		list.addLast(element);	
+			
+		//PRINT NEW CHANGES
+		System.out.println("New appended array :");
+		System.out.println(list); //PRINTING OUT LIST
+			
+		//USER NOTIFICATION
+		System.out.println("(Inserted [" + element +  "] to the end of LinkedList)");
+				
+		// IMPLEMENTED TO RESET ARRAY FOR NEXT METHOD TO TEST
+		list.clear();
+		list.addAll(Arrays.asList("Blue", "Yellow","Red", "Green", "Orange", "White", "Black"));
+	}	
+		
+	
 	// 9. Write a Java program to insert some elements at the specified position into a linked list.
 	private static void insertFewAt(LinkedList<String> list) {
 		System.out.println("\nQUESTION 9 -----------------------");
@@ -165,6 +212,22 @@ public class Assignment5_Q1to15 {
 	private static void removeFirstLast(LinkedList<String> list) {
 		System.out.println("\nQUESTION 11 ----------------------");
 		
+		//DISPLAY CURRENT ORDER OF LINKEDLIST
+		System.out.println("Currently the LinkedList order is : ");
+		System.out.println(list + " \r\n");
+		list.remove(list.getFirst());	//METHOD USED TO INSERT TO FIRST INDEX
+		list.remove(list.getLast());	//METHOD USED TO INSERT TO LAST INDEX
+		
+		//PRINT NEW CHANGES
+		System.out.println("New appended array :");
+		System.out.println(list);
+		
+		//USER NOTIFICATION
+		System.out.println("(Removed the first & last index from the LinkedList)");
+				
+		// IMPLEMENTED TO RESET ARRAY FOR NEXT METHOD TO TEST
+		list.clear();
+		list.addAll(Arrays.asList("Blue", "Yellow","Red", "Green", "Orange", "White", "Black"));		
 	}
 	
 	
@@ -172,6 +235,25 @@ public class Assignment5_Q1to15 {
 	private static void removeAll(LinkedList<String> list) {
 		System.out.println("\nQUESTION 12 ----------------------");
 		
+		//DISPLAY CURRENT ORDER OF LINKEDLIST
+		System.out.println("Currently the LinkedList order is : ");
+		System.out.println(list + " \r\n");
+		
+		//WHILE LOOP TO REMOVE FIRST UNTIL THERE IS NO ELEMENTS
+		while (list.size() > 0) {
+			list.removeFirst();
+		}
+		
+		//PRINT NEW CHANGES
+		System.out.println("The LinkedList now contains :");
+		System.out.println(list);
+		
+		//USER NOTIFICATION
+		System.out.println("(Removed all elements from the LinkedList)");
+		
+		// IMPLEMENTED TO RESET ARRAY FOR NEXT METHOD TO TEST
+		list.clear();
+		list.addAll(Arrays.asList("Blue", "Yellow","Red", "Green", "Orange", "White", "Black"));
 	}
 	
 	// 13. Write a Java program of swap two elements in an linked list
@@ -189,6 +271,19 @@ public class Assignment5_Q1to15 {
 	private static void isEmpty(LinkedList<String> list) {
 		System.out.println("\nQUESTION 15 ----------------------");
 		
+		//DISPLAY CURRENT ORDER OF LINKEDLIST
+		System.out.println("Currently the LinkedList order is : ");
+		System.out.println(list + " \r\n");
+		
+		//METHOD USED TO CHECK IF EMPTY
+		if (list.isEmpty()) {
+			System.out.println("The array is EMPTY!");
+		} else {
+			System.out.println("The array is NOT EMPTY!");
+		}
+		
+		//USER NOTIFICATION
+		System.out.println("(Checking if LinkedList is empty)");
 	}
 
 }
