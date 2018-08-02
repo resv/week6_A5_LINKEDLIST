@@ -89,10 +89,12 @@ public class Assignment5_Q1to15 {
 		//DISPLAY CURRENT ORDER OF LINKEDLIST
 		System.out.println("Currently the LinkedList order is : ");
 		System.out.println(list + " ");
+		
 		list.add(index, element);	//METHOD USED TO INSERT AT SPECIFIC INDEX
-		System.out.println("We inserted " + element + " at the " + index + "index : ");
+		
+		System.out.println("\r\nWe inserted " + element + " at the " + index + " index : ");
 		System.out.println(list);
-		System.out.println("(Inserting an element " + "\""+ element +  "\", at index "+ index +")");
+		System.out.println("(Inserting an element " + "[" + element + "] at index "+ index +")");
 		
 		// IMPLEMENTED TO RESET ARRAY FOR NEXT METHOD TO TEST
 		list.clear();
@@ -112,7 +114,7 @@ public class Assignment5_Q1to15 {
 		System.out.println("New appended array :");
 
 		System.out.println(list);
-		System.out.println("(Inserted [" + elementFirst +  "], to the front & [" + elementLast + "] to the end)");
+		System.out.println("(Inserted [" + elementFirst +  "] to the front & [" + elementLast + "] to the end)");
 		
 		// IMPLEMENTED TO RESET ARRAY FOR NEXT METHOD TO TEST
 		list.clear();
@@ -134,7 +136,7 @@ public class Assignment5_Q1to15 {
 		System.out.println("New appended array :");
 
 		System.out.println(list); //PRINTING OUT LIST
-		System.out.println("(Inserted [" + element +  "], to the front)");
+		System.out.println("(Inserted [" + element +  "] to the front)");
 		
 		// IMPLEMENTED TO RESET ARRAY FOR NEXT METHOD TO TEST
 		list.clear();
