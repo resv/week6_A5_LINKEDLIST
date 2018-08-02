@@ -58,6 +58,8 @@ public class Assignment5_Q1to15 {
 	// 2. Write a Java program to iterate through all elements in a linked list.
 	private static void iterate(LinkedList<String> list) {
 		System.out.println("\nQUESTION 2 -----------------------");
+		
+		
 		for (String elements : list) {
 			System.out.printf(elements + " ");
 		}	
@@ -161,7 +163,7 @@ public class Assignment5_Q1to15 {
 		
 		//PRINT NEW CHANGES
 		System.out.println("New appended array :");
-		System.out.println(list); //PRINTING OUT LIST
+		System.out.println(list);
 		
 		//USER NOTIFICATION
 		System.out.println("(Inserted [" + element +  "] to the front)");
@@ -185,7 +187,7 @@ public class Assignment5_Q1to15 {
 			
 		//PRINT NEW CHANGES
 		System.out.println("New appended array :");
-		System.out.println(list); //PRINTING OUT LIST
+		System.out.println(list);
 			
 		//USER NOTIFICATION
 		System.out.println("(Inserted [" + element +  "] to the end of LinkedList)");
@@ -215,8 +217,10 @@ public class Assignment5_Q1to15 {
 		//DISPLAY CURRENT ORDER OF LINKEDLIST
 		System.out.println("Currently the LinkedList order is : ");
 		System.out.println(list + " \r\n");
-		list.remove(list.getFirst());	//METHOD USED TO INSERT TO FIRST INDEX
-		list.remove(list.getLast());	//METHOD USED TO INSERT TO LAST INDEX
+		
+		//METHOD USED TO REMOVE FIRST AND LAST ELEMENTS OF THE LinkedList
+		list.remove(list.getFirst());
+		list.remove(list.getLast());
 		
 		//PRINT NEW CHANGES
 		System.out.println("New appended array :");
@@ -275,7 +279,7 @@ public class Assignment5_Q1to15 {
 		System.out.println("Currently the LinkedList order is : ");
 		System.out.println(list + " \r\n");
 		
-		//METHOD USED TO CHECK IF EMPTY
+		//IF STATEMENT WITH BOOLEAN PARAMETER METHOD USED TO CHECK IF EMPTY
 		if (list.isEmpty()) {
 			System.out.println("The array is EMPTY!");
 		} else {
