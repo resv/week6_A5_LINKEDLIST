@@ -8,8 +8,6 @@ import java.util.LinkedList;
 public class Assignment5_Q1to15 {
 
 	public static void main(String[] args) {
-		// TODO 
-
 		// INITIALIZE LINKEDLIST
 		LinkedList<String> colors = new LinkedList<String>((Arrays.asList
 		("Blue", "Yellow","Red", "Green", "Orange", "White", "Black")));
@@ -21,7 +19,7 @@ public class Assignment5_Q1to15 {
 		iterateReverse(colors);
 		insertAt(colors, 5, "Brown");
 		insertFirstLast(colors,"Brown", "Gray");
-		insertFirst(colors);
+		insertFirst(colors, "Brown");
 		insertLast(colors);
 		insertFewAt(colors);
 		getFirstLast(colors);
@@ -70,7 +68,18 @@ public class Assignment5_Q1to15 {
 	private static void iterateReverse(LinkedList<String> list) {
 		System.out.println("\nQUESTION 4 -----------------------");
 		
+		//PRINT OUT ORIGINAL LINKEDLIST ORDER
+		System.out.println("Current order :" + list);
 		
+		//FOR LOOP TO PUSH ELEMENT TO THE LAST INDEX AND TO POP THE FIRST ELEMENT
+		for (int i = 0, k = list.size() - 1; i < k; i++) {
+			list.add(i, list.remove(k));
+		}
+		System.out.println("New reversed order : " + list);
+		
+		// IMPLEMENTED TO RESET ARRAY FOR NEXT METHOD TO TEST
+		list.clear();
+		list.addAll(Arrays.asList("Blue", "Yellow","Red", "Green", "Orange", "White", "Black"));
 	}
 
 	// 5. Write a Java program to insert the specified element at the specified position in the linked list.
@@ -103,7 +112,7 @@ public class Assignment5_Q1to15 {
 		System.out.println("New appended array :");
 
 		System.out.println(list);
-		System.out.println("(Inserted [" + elementFirst +  "], to the front & [" + elementLast + "] to the end.)");
+		System.out.println("(Inserted [" + elementFirst +  "], to the front & [" + elementLast + "] to the end)");
 		
 		// IMPLEMENTED TO RESET ARRAY FOR NEXT METHOD TO TEST
 		list.clear();
@@ -113,10 +122,25 @@ public class Assignment5_Q1to15 {
 	
 	
 	// 7. Write a Java program to insert the specified element at the front of a linked list.
-	private static void insertFirst(LinkedList<String> list) {
+	private static void insertFirst(LinkedList<String> list, String element) {
 		System.out.println("\nQUESTION 7 -----------------------");
+	
+		//DISPLAY CURRENT ORDER OF LINKEDLIST
+		System.out.println("Currently the LinkedList order is : ");
+		System.out.println(list + " \r\n");
 		
-	}
+		
+		list.addFirst(element);	//METHOD USED TO INSERT AT SPECIFIC INDEX
+		System.out.println("New appended array :");
+
+		System.out.println(list); //PRINTING OUT LIST
+		System.out.println("(Inserted [" + element +  "], to the front)");
+		
+		// IMPLEMENTED TO RESET ARRAY FOR NEXT METHOD TO TEST
+		list.clear();
+		list.addAll(Arrays.asList("Blue", "Yellow","Red", "Green", "Orange", "White", "Black"));
+	}	
+	
 
 	// 8. Write a Java program to insert the specified element at the end of a linked list.
 	private static void insertLast(LinkedList<String> list) {
