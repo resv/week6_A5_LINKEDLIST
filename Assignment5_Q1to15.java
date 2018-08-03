@@ -61,16 +61,18 @@ public class Assignment5_Q1to15 {
 	private static void iterate(LinkedList<String> list) {
 		System.out.println("\nQUESTION 2 -----------------------");
 		
-		
+		//METHOD TO ITERATE THROUGH ALL THE ELEMENTS OF THE LINKEDLIST
 		for (String elements : list) {
 			System.out.printf(elements + " ");
 		}	
+		
+		//USER NOTIFICATION
 		System.out.println("\r\n(Iterating through the LinkedList)");
 	}
 	
 	
 	// 3. Write a Java program to iterate through all elements in a linked list starting at the specified position.
-	private static void iterateAt(LinkedList<String> list,int index) {
+	private static void iterateAt(LinkedList<String> list, int index) {
 		System.out.println("\nQUESTION 3 -----------------------");
 		
 		//DISPLAY CURRENT ORDER OF LINKEDLIST
@@ -88,7 +90,7 @@ public class Assignment5_Q1to15 {
 		System.out.println(list);
 		
 		//USER NOTIFICATION
-		System.out.println("\r\n(Iterating through the LinkedList at starting at index : " + index + ")");
+		System.out.println("(Iterating through the LinkedList at starting at index " + index + ")");
 		
 		// IMPLEMENTED TO RESET ARRAY FOR NEXT METHOD TO TEST
 		list.clear();
