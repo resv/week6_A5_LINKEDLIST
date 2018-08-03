@@ -17,7 +17,7 @@ public class Assignment5_Q1to15 {
 		// CALLING ALL METHODS, ONE AFTER ANOTHER
 		append(colors, "Green");
 		iterate(colors);
-//		iterateAt(colors);
+		iterateAt(colors, 3);
 		iterateReverse(colors);
 		insertAt(colors, 5, "Brown");
 		insertFirstLast(colors,"Brown", "Gray");
@@ -69,15 +69,32 @@ public class Assignment5_Q1to15 {
 	}
 	
 	
-//	// 3. Write a Java program to iterate through all elements in a linked list starting at the specified position.
-//	private static void iterateAt(LinkedList<String> list) {
-//		System.out.println("\nQUESTION 3 -----------------------");
-//		for (String elements : list.indexOf(list.get(4))) {
-//			System.out.printf(elements + " ");
-//		}	
-//		System.out.println("\r\n(Iterating through the LinkedList)");
-//		
-//	}
+	// 3. Write a Java program to iterate through all elements in a linked list starting at the specified position.
+	private static void iterateAt(LinkedList<String> list,int index) {
+		System.out.println("\nQUESTION 3 -----------------------");
+		
+		//DISPLAY CURRENT ORDER OF LINKEDLIST
+		System.out.println("Currently the LinkedList order is : ");
+		System.out.println(list + " \r\n");
+		
+		//METHOD TO REMOVE A CERTAIN AMOUNT OF ELEMENTS THEN TO ITERATE FROM THERE
+		//ITERATOR METHOD CAN BE USED INSTEAD BUT USED THIS METHOD FOR CRITICAL THINKING
+		for (int i = 0; i < index; i++) {
+			list.removeFirst();	
+		}
+		
+		//PRINT NEW CHANGES
+		System.out.println("The LinkedList now iterating starting at " + index + " :");
+		System.out.println(list);
+		
+		//USER NOTIFICATION
+		System.out.println("\r\n(Iterating through the LinkedList at starting at index : " + index + ")");
+		
+		// IMPLEMENTED TO RESET ARRAY FOR NEXT METHOD TO TEST
+		list.clear();
+		list.addAll(Arrays.asList("Blue", "Yellow","Red", "Green", "Orange", "White", "Black"));
+	}
+	
 	// 4. Write a Java program to iterate a linked list in reverse order.
 	private static void iterateReverse(LinkedList<String> list) {
 		System.out.println("\nQUESTION 4 -----------------------");
@@ -210,6 +227,20 @@ public class Assignment5_Q1to15 {
 	private static void getFirstLast(LinkedList<String> list) {
 		System.out.println("\nQUESTION 10 ----------------------");
 		
+		//DISPLAY CURRENT ORDER OF LINKEDLIST
+		System.out.println("Currently the LinkedList order is : ");
+		System.out.println(list + " \r\n");
+		
+		//METHOD USED TO GET THE FIRST AND LAST ELEMENTS IN THE LINKEDLIST
+		String first = list.getFirst();
+		String last = list.getLast();
+		
+		//PRINT NEW CHANGES
+		System.out.println("The first element is [" + first + "] and [" + last + "] is the last.");
+		
+		//USER NOTIFICATION
+		System.out.println("(Displaying the first and last element in the LinkedList)");
+		
 	}
 	
 	// 11. Write a Java program to remove first and last element from a linked list.
@@ -278,7 +309,6 @@ public class Assignment5_Q1to15 {
 		list.add(element1, element2Value);
 		list.remove(element2);
 		list.add(element2, element1Value);
-		
 		
 		//PRINT NEW CHANGES
 		System.out.println("The new LinkedList order is :");
