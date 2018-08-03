@@ -2,6 +2,8 @@
 
 package week6_A5_LINKEDLIST;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 
@@ -25,7 +27,7 @@ public class Assignment5_Q1to15 {
 		getFirstLast(colors);
 		removeFirstLast(colors);
 		removeAll(colors);
-		swapTwo(colors);
+		swapTwo(colors, 3,6);
 		convert(colors);
 		isEmpty(colors);
 		
@@ -261,14 +263,61 @@ public class Assignment5_Q1to15 {
 	}
 	
 	// 13. Write a Java program of swap two elements in an linked list
-	private static void swapTwo(LinkedList<String> list) {
+	private static void swapTwo(LinkedList<String> list, int element1, int element2) {
 		System.out.println("\nQUESTION 13 ----------------------");
+		
+		//DISPLAY CURRENT ORDER OF LINKEDLIST
+		System.out.println("Currently the LinkedList order is : ");
+		System.out.println(list + " \r\n");
+	
+		//METHOD TO SWAP ELEMENTS IN A LINKEDLIST
+		String element1Value = list.get(element1);
+		String element2Value = list.get(element2);
+		
+		list.remove(element1);
+		list.add(element1, element2Value);
+		list.remove(element2);
+		list.add(element2, element1Value);
+		
+		
+		//PRINT NEW CHANGES
+		System.out.println("The new LinkedList order is :");
+		System.out.println(list);
+		
+		//USER NOTIFICATION
+		System.out.println("(Swapped " + element1Value + " with " + element2Value + " in the LinkedList)");
+		
+		// IMPLEMENTED TO RESET ARRAY FOR NEXT METHOD TO TEST
+		list.clear();
+		list.addAll(Arrays.asList("Blue", "Yellow","Red", "Green", "Orange", "White", "Black"));
 		
 	}
 	// 14. Write a Java program to convert a linked list to array list.
 	private static void convert(LinkedList<String> list) {
 		System.out.println("\nQUESTION 14 ----------------------");
 		
+		//DISPLAY CURRENT ORDER OF LINKEDLIST
+		System.out.println("Currently the LinkedList order is : ");
+		System.out.println(list + " \r\n");
+		
+		//METHOD TO CONVERT LINKEDLIST TO AN NORMAL ARRAY
+		String[] arr = new String[list.size()];
+		list.toArray(arr);
+		
+		//METHOD TO CONVERT LINKED LIST INTO A LINKED LIST
+		ArrayList<String> arrList = new ArrayList<String>();
+		for (String element : list) {
+			arrList.add(element);
+		}
+	
+		//PRINT NEW CHANGES
+		System.out.println("The normal Array now contains :");
+		System.out.println(Arrays.toString(arr));
+		System.out.println("The ArrayList now contains :");
+		System.out.println(arrList);
+		
+		//USER NOTIFICATION
+				System.out.println("(Converted LinkedList into an Array & ArrayList)");
 	}
 	
 	// 15. Write a Java program to test an linked list is empty or not.
