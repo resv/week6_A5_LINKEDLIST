@@ -23,7 +23,7 @@ public class Assignment5_Q1to15 {
 		insertFirstLast(colors,"Brown", "Gray");
 		insertFirst(colors, "Brown");
 		insertLast(colors, "Brown");
-		insertFewAt(colors);
+		insertFewAt(colors, 3, "Brown", "Gray");
 		getFirstLast(colors);
 		removeFirstLast(colors);
 		removeAll(colors);
@@ -218,8 +218,27 @@ public class Assignment5_Q1to15 {
 		
 	
 	// 9. Write a Java program to insert some elements at the specified position into a linked list.
-	private static void insertFewAt(LinkedList<String> list) {
+	private static void insertFewAt(LinkedList<String> list, int index, String element1, String element2) {
 		System.out.println("\nQUESTION 9 -----------------------");
+		
+		//DISPLAY CURRENT ORDER OF LINKEDLIST
+		System.out.println("Currently the LinkedList order is : ");
+		System.out.println(list + " \r\n");
+					
+		
+		list.add(index, element1);
+		list.add(index+1, element2);
+		
+		//PRINT NEW CHANGES
+		System.out.println("The new LinkList order is : ");
+		System.out.println(list);
+		
+		//USER NOTIFICATION
+		System.out.println("(Added [" + element1 + "] and [" + element2 + "] at index " + index + ")");
+				
+		// IMPLEMENTED TO RESET ARRAY FOR NEXT METHOD TO TEST
+		list.clear();
+		list.addAll(Arrays.asList("Blue", "Yellow","Red", "Green", "Orange", "White", "Black"));
 		
 	}
 	
